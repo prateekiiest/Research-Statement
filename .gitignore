@@ -1,0 +1,3 @@
+
+# Private local research provenance (never commit raw logs or snapshots)
+.writing-provenance/

@@ -1,0 +1,48 @@
+{
+  "coverage_limitations": [
+    "Filesystem polling observes saved states, not every keystroke, unsaved buffer, thought, or exact edit time.",
+    "Git commits and hashes do not prove authorship or absence of AI assistance.",
+    "Overleaf edits are observed only after synchronization into this local Git working tree.",
+    "No claim is made about other devices, accounts, or unmonitored channels."
+  ],
+  "event_counts": {
+    "file_baseline": 16,
+    "git_head_observed": 1,
+    "saved_file_version": 19
+  },
+  "generated_at_utc": "2026-10-30T06:23:38.587390+00:00",
+  "observed_period": {
+    "first_event_utc": "2026-10-30T05:33:25.225+00:00",
+    "last_event_utc": "2026-10-30T06:22:36.563+00:00"
+  },
+  "privacy": "No raw event records, prompts, document contents, local absolute paths, usernames, or browser history are included.",
+  "private_log_sha256": "6815c2bbc4477b1bfd093abc315fcb2ade206e8b6d2e1e2ab1e54a57a4568d39",
+  "repository_commit": "d30fb90ea624ec6290721440c4c82fa8b26e2c49",
+  "schema_version": 1,
+  "tracked_artifacts": {
+    ".bib": [
+      {
+        "bytes": 6142,
+        "sha256": "26909cc9d91a9970f5869263fc94efa113e1d2347846a1bdd60afc0ad1f0708a"
+      }
+    ],
+    ".tex": [
+      {
+        "bytes": 26332,
+        "sha256": "f698e3d6046b8f7b8822600739eff1bc32455a94f2cc8181f722d0843379d9af"
+      },
+      {
+        "bytes": 13345,
+        "sha256": "4f951cb31226fbcf2012284713a2fe534705239f5c90303d16286fc448ede344"
+      },
+      {
+        "bytes": 16762,
+        "sha256": "73912ebebd7508b2f57a884a3ccf28169d3fb9236f191d5f323f44d0ce263b56"
+      },
+      {
+        "bytes": 7503,
+        "sha256": "484d87f34fd97d23f7af92bc9ce3766acfdb1d24e5bdf968b6309c478826ae5d"
+      }
+    ]
+  }
+}

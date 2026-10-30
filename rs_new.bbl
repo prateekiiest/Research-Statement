@@ -1,0 +1,89 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{NKH{\etalchar{+}}26}
+
+\bibitem[ACK{\etalchar{+}}26]{agrawal2026minibatch}
+Prayas Agrawal, Prateek Chanda, Ishita Khatri, Ganesh Ramakrishnan, Bamdev Mishra, and Pratik Jawanpuria.
+\newblock Minibatch selection for language models via partition matroid constrained gradient matching.
+\newblock {\em ICML}, 2026.
+
+\bibitem[CAG{\etalchar{+}}26]{chandauniprot}
+Prateek Chanda, Prayas Agrawal, Karthik~S Gurumoorthy, Ganesh Ramakrishnan, Bamdev Mishra, and Pratik Jawanpuria.
+\newblock Uniprot: Uniform prototype selection via partial optimal transport with submodular guarantees.
+\newblock In {\em The 29th International Conference on Artificial Intelligence and Statistics}, 2026.
+
+\bibitem[CAS{\etalchar{+}}26]{chanda2026bandit}
+Prateek Chanda, Prayas Agrawal, Saral Sureka, Lokesh~Reddy Polu, Atharv Kshirsagar, and Ganesh Ramakrishnan.
+\newblock Bandit guided submodular curriculum for adaptive subset selection.
+\newblock {\em Advances in Neural Information Processing Systems}, 38:115035--115076, 2026.
+
+\bibitem[{Gar}26]{gartner2026}
+{Gartner}.
+\newblock {Gartner Forecasts Worldwide AI-Optimized IaaS Spending to Grow 96\% Through 2026}.
+\newblock Gartner Press Release, August 2026.
+
+\bibitem[KB14]{kingma2014adam}
+Diederik~P Kingma and Jimmy Ba.
+\newblock Adam: A method for stochastic optimization.
+\newblock {\em arXiv preprint arXiv:1412.6980}, 2014.
+
+\bibitem[KDR{\etalchar{+}}21]{killamsetty2021grad}
+Krishnateja Killamsetty, Sivasubramanian Durga, Ganesh Ramakrishnan, Abir De, and Rishabh Iyer.
+\newblock Grad-match: Gradient matching based data subset selection for efficient deep model training.
+\newblock In {\em International Conference on Machine Learning}, pages 5464--5474. PMLR, 2021.
+
+\bibitem[KEP{\etalchar{+}}23]{killamsetty2023milo}
+Krishnateja Killamsetty, Alexandre~V Evfimievski, Tejaswini Pedapati, Kiran Kate, Lucian Popa, and Rishabh Iyer.
+\newblock Milo: Model-agnostic subset selection framework for efficient model training and tuning.
+\newblock {\em arXiv preprint arXiv:2301.13287}, 2023.
+
+\bibitem[KSRI21]{killamsetty2021glister}
+Krishnateja Killamsetty, Durga Sivasubramanian, Ganesh Ramakrishnan, and Rishabh Iyer.
+\newblock Glister: Generalization based data subset selection for efficient and robust learning.
+\newblock In {\em Proceedings of the AAAI conference on artificial intelligence}, volume~35, pages 8110--8118, 2021.
+
+\bibitem[LZM{\etalchar{+}}25]{liu2025regmix}
+Qian Liu, Xiaosen Zheng, Niklas Muennighoff, Guangtao Zeng, Longxu Dou, Tianyu Pang, Jing Jiang, and Min Lin.
+\newblock Regmix: Data mixture as regression for language model pre-training.
+\newblock In {\em International Conference on Learning Representations}, volume 2025, pages 38305--38339, 2025.
+
+\bibitem[MBL20]{mirzasoleiman2020coresets}
+Baharan Mirzasoleiman, Jeff Bilmes, and Jure Leskovec.
+\newblock Coresets for data-efficient training of machine learning models.
+\newblock In {\em International Conference on Machine Learning}, pages 6950--6960. PMLR, 2020.
+
+\bibitem[NKH{\etalchar{+}}26]{nayak2026sculpting}
+Nikhil~Shivakumar Nayak, Krishnateja Killamsetty, Ligong Han, Abhishek Bhandwaldar, Prateek Chanda, Kai Xu, Oleg Silkin, Mustafa Eyceoz, Hao Wang, Aldo Pareja, et~al.
+\newblock Sculpting subspaces: Constrained full fine-tuning in llms for continual learning.
+\newblock In {\em International Conference on Learning Representations}, volume 2026, pages 20212--20243, 2026.
+
+\bibitem[NPS25]{mckinsey2025}
+Jesse Noffsinger, Mark Patel, and Pankaj Sachdeva.
+\newblock The cost of compute: A \$7 trillion race to scale data centers.
+\newblock {\em McKinsey \& Company}, April 2025.
+
+\bibitem[NYA{\etalchar{+}}25]{nguyen2025colm}
+D.~Nguyen, W.~Yang, R.~Anand, Y.~Yang, and B.~Mirzasoleiman.
+\newblock Mini-batch coresets for memory-efficient language model training on data mixtures.
+\newblock In {\em International Conference on Learning Representations}, 2025.
+
+\bibitem[SKW26]{suriyakumar2026unlearning}
+Vinith Suriyakumar, Gautam Kamath, and Ashia Wilson.
+\newblock Unlearning data at scale.
+\newblock Tutorial at the International Conference on Machine Learning (ICML), 2026.
+
+\bibitem[TMS{\etalchar{+}}23]{touvron2023llama}
+Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, et~al.
+\newblock Llama 2: Open foundation and fine-tuned chat models.
+\newblock {\em arXiv preprint arXiv:2307.09288}, 2023.
+
+\bibitem[XPD{\etalchar{+}}23]{xie2023doremi}
+Sang~Michael Xie, Hieu Pham, Xuanyi Dong, Nan Du, Hanxiao Liu, Yifeng Lu, Percy~S Liang, Quoc~V Le, Tengyu Ma, and Adams~Wei Yu.
+\newblock Doremi: Optimizing data mixtures speeds up language model pretraining.
+\newblock {\em Advances in Neural Information Processing Systems}, 36:69798--69818, 2023.
+
+\bibitem[YJS{\etalchar{+}}24]{yu2024metamath}
+Longhui Yu, Weisen Jiang, Han Shi, Jincheng Yu, Zhengying Liu, Yu~Zhang, James Kwok, Zhenguo Li, Adrian Weller, and Weiyang Liu.
+\newblock Metamath: Bootstrap your own mathematical questions for large language models.
+\newblock In {\em International Conference on Learning Representations}, volume 2024, pages 45040--45061, 2024.
+
+\end{thebibliography}

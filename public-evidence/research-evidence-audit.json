@@ -1,0 +1,71 @@
+{
+  "activity": {
+    "event_types": {
+      "file_baseline": 14,
+      "git_head_observed": 1,
+      "saved_file_version": 19
+    },
+    "evidence_classes": {
+      "filesystem_observed": 33,
+      "git_observed": 1
+    },
+    "file_extensions_observed": {
+      ".bib": 1,
+      ".json": 1,
+      ".log": 8,
+      ".pdf": 6,
+      ".py": 6,
+      ".tex": 11
+    },
+    "first_observed_utc": "2026-10-30T05:33:25.225+00:00",
+    "last_observed_utc": "2026-10-30T06:21:34.766+00:00",
+    "total_observed_events": 34
+  },
+  "ai_tool_observations": {
+    "cursor_ai_related_event_count": 0,
+    "cursor_event_types": {},
+    "cursor_model_labels": {},
+    "interpretation": "A Cursor hook event shows that Cursor emitted that event. It does not quantify AI-generated text. No matching event means only that none appears in the available Cursor log."
+  },
+  "coverage_gaps": [
+    "Offline ideation and thoughts are not observable.",
+    "Browser literature searches, external chat tools, terminal commands, and other devices are not comprehensively monitored.",
+    "Cursor events are visible only when hooks are installed, enabled, and functioning.",
+    "Editor hashes and file snapshots do not identify the person or tool that produced text.",
+    "Polling can miss edits that occur and revert between scans; Overleaf changes appear only after local synchronization.",
+    "A local user can stop or rewrite logs. Hash chains detect inconsistency, not a determined administrator.",
+    "AI-text detectors and writing-style scores are not treated as authorship proof."
+  ],
+  "generated_at_utc": "2026-10-30T06:22:34.778245+00:00",
+  "integrity": {
+    "logs_invalid": [],
+    "logs_present": [
+      "macOS filesystem collector"
+    ],
+    "per_log": {
+      "Cursor hooks": {
+        "error": null,
+        "events": 0,
+        "present": false,
+        "valid": null
+      },
+      "VS Code extension": {
+        "error": null,
+        "events": 0,
+        "present": false,
+        "valid": null
+      },
+      "macOS filesystem collector": {
+        "error": null,
+        "events": 34,
+        "final_hash": "74260baddeca5d44902c70835ed95a17c270dfcfaf03f933db3ebe2730c81d84",
+        "present": true,
+        "valid": true
+      }
+    },
+    "snapshot_failures": [],
+    "snapshot_hashes_checked": 33
+  },
+  "scope": "Metadata-only audit. No document contents, prompts, responses, snapshots, absolute paths, or usernames are included.",
+  "verdict": "INCONCLUSIVE \u2014 no Cursor hook log is available; absence of a log cannot establish non-use"
+}

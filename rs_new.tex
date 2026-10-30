@@ -21,12 +21,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%  PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
 \documentclass[11pt,a4paper,sans,usenames,dvipsnames]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
-
-
 
 \moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
 \moderncvcolor{blue} % Base palette (we override it below)
@@ -50,7 +48,7 @@
 %\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
 
 %----------------------------------------------------------------------------------------
-%	NAME AND CONTACT INFORMATION SECTION
+%  NAME AND CONTACT INFORMATION SECTION
 %----------------------------------------------------------------------------------------
 
 \firstname{Prateek} % Your first name
@@ -71,42 +69,36 @@
 %----------------------------------------------------------------------------------------
 
 \begin{document}
-\makecvtitle 
+\makecvtitle
 My primary research focus revolves around data and algorithm efficiency problems that stem from addressing scalability and efficiency issues in the training and deployment of large-scale models. I employ tools from \textbf{non-convex optimization} and \textbf{coreset}/\textbf{subset selection literature} to address these bottlenecks effectively.
-Broadly, the cornerstone of my research has been algorithmic facets of subset selection problems - here the goal is to design efficient algorithms for estimating some unknown information from distorted noisy data. 
+Broadly, the cornerstone of my research has been algorithmic facets of subset selection problems - here the goal is to design efficient algorithms for estimating some unknown information from distorted noisy data.
 
 Industry reports highlight the growing computational demands of large-scale AI. A McKinsey report in 2025 \cite{mckinsey2025} notes that the hardware, memory, storage, and energy required to operate data centers face an \emph{``unquenchable need for more''}, projecting \$6.7 trillion in global data-center capital expenditure by 2030. Similarly, Gartner \cite{gartner2026} attributes the growth in AI infrastructure spending to \emph{``continued demand for infrastructure to support large language model (LLM) training''} and the increasing deployment of AI across enterprise applications. Together, these findings underscore the need for memory- and compute-efficient machine learning methods that reduce resource requirements while maintaining model performance, thereby enabling the scalable and economically sustainable training and deployment of large language models.
 
-\textbf{Key Research Theme and Tools:} 
-\noindent \textit{"How can we design effective training incorporate personalization efficiently at scale despite limited or complex user-specific data?"} 
+\textbf{Key Research Theme and Tools:}
+\noindent \textit{"How can we design effective training incorporate personalization efficiently at scale despite limited or complex user-specific data?"}
 
 In large industrial systems, however, several inherent challenges for implementing user-level personalization arise:
 
-$\bullet{}$ \textbf{Limited data per user:} 
-    
-$\bullet{}$ \textbf{Scale:} 
+$\bullet{}$ \textbf{Memory Blowup during Training Language Models:} One of the important considerations
 
+
+$\bullet{}$ \textbf{Scale:}
 
 \textit{More generally, similar memory/latency challenges arise also in the deployment of large ML models in multiple downstream tasks, where the amount of exploratory data per task is very limited. This limitation necessitates a joint learning over multiple tasks with appropriate parameter sharing across tasks}. Furthermore, it must be possible to incorporate such modelling frameworks on top of modern large scale transformer based systems; classical approaches usually fall short in this regard. These challenges have led to a nascent field called \textbf{Parameter Efficient Fine Tuning} \cite{lialin2023scaling}.
-My research makes progress towards addressing the above challenges. 
-% leading to sub-optimal performance. Second, in some sense, both approaches learn a user embedding  which is then consumed by a global model to provide the personalized predictions.   
-% However, in this case, the global model might not be able to capture all the variations across users unless it is of extremely large size which in turn leads to large inference/training cost. Moreover, user-descriptive feature vectors, limited by privacy concerns, might not be able to capture user-tastes explicitly. 
-%Similarly, a fully fine-tuned model per user is also infeasible due to extremely high memory overhead.
-%Naive solutions to address the above issues are often based on content similarity - such systems result in  biased recommendations and cannot learn user tastes appropriately at scale.  
- Specifically, I look at the personalization problem from both theoretical and applied lens. Specifically, I formulate generative models with appropriate constraints/parameter-sharing to address the classical limitations and design practical algorithms with rigorous theoretical guarantees. These natural constraints (such as, \textbf{low rank, sparsity, underlying latent sub-populations}) are often non-convex or lead to non-convex objectives.
+My research makes progress towards addressing the above challenges.
+Specifically, I look at the personalization problem from both theoretical and applied lens. Specifically, I formulate generative models with appropriate constraints/parameter-sharing to address the classical limitations and design practical algorithms with rigorous theoretical guarantees. These natural constraints (such as, \textbf{low rank, sparsity, underlying latent sub-populations}) are often non-convex or lead to non-convex objectives.
 \textit{Therefore, this line of work involves a marriage of tools from non-convex optimization and statistics. Furthermore, key ingredients include interaction/collaboration where data from multiple users are processed together adaptively.}  \textbf{My novel algorithmic techniques are being used in several internal applications at Google, to successfully incorporate personalization.}
 %Finally, I also empirically test the performance of the designed algorithms on real datasets.
 
-%In the short term, 
-%My long-term vision for personalization is to advance the theory and train futuristic  hyper-personalized systems with low storage costs that can also address  challenges such as unlearning, robustness and privacy. 
+%In the short term,
+%My long-term vision for personalization is to advance the theory and train futuristic  hyper-personalized systems with low storage costs that can also address  challenges such as unlearning, robustness and privacy.
 
 In the subsequent sections, I will dive deeper into the different themes comprising my research. Concurrently, I will discuss also several related questions that I am very excited about and aim to resolve in the future.
 
 \section{Memory Efficient Training of Large Language Models}\label{sec:scalable}
 
-
 Typical training of large language models (LLMs), during either pretraining or post-training, requires substantial GPU memory to store model weights, gradients, activations, and optimizer states. For instance, full-parameter training of Llama-2 7B \cite{touvron2023llama} requires \emph{approximately 112 GB of memory} just to store the model states, without accounting for activations and temporary buffers.
-
 
 Since activation memory scales with batch size and sequence length, training with large batches often necessitates techniques such as model-state sharding, activation checkpointing, or CPU offloading. These memory constraints limit the use of larger batches and greater data parallelism, which can improve hardware utilization and reduce gradient variance. This has motivated growing interest in developing more effective minibatch selection strategies for language model training \cite{nguyen2025colm, chandauniprot, agrawal2026minibatch}.
 
@@ -115,70 +107,58 @@ Several prior works \cite{killamsetty2021grad, killamsetty2021glister, mirzasole
 A prominent class of approaches thus formulates minibatch selection as an \emph{optimization problem} to focus towards selecting training samples per batch whose gradients best approximate the full bath training objective, or the validation sample gradients to result in better validation performance.
 
 As discussed already, \textbf{scalable and efficient training is a severe challenge} from infrastructure and compute perspective. The main questions here are: \textit{"Can we train LLMs with smaller mini-batches and get similar benefits of training with larger batch
-sizes? What reasonable assumptions can be made to even make the problem feasible?"}. Answers to these questions can lead to significant reduction of the \textit{memory compute}, %a critical parameter defined as the sufficient time for collecting user-data and start meaningful recommendations.  
+sizes? What reasonable assumptions can be made to even make the problem feasible?"}. Answers to these questions can lead to significant reduction of the \textit{memory compute}, %a critical parameter defined as the sufficient time for collecting user-data and start meaningful recommendations.
 
-I study the problem in two distinct learning environments (a)  \textbf{Dynamic:} Our goal is to learn how the particular ordering of training samples affect the overall convergence of the model and downstream performance. These phenomenon has been studied widely in the curriculum learning literature. However, designing such curriculum learning style training strategies in an offline setting by segregating in different data domains is expensive and often requires domain expertise to judge of difficulty of a training sample. There are many ways to do this. \cite{killamsetty2023milo} 
+I study the problem in two distinct learning environments (a)  \textbf{Dynamic:} Our goal is to learn how the particular ordering of training samples affect the overall convergence of the model and downstream performance. These phenomenon has been studied widely in the curriculum learning literature. However, designing such curriculum learning style training strategies in an offline setting by segregating in different data domains is expensive and often requires domain expertise to judge of difficulty of a training sample. There are many ways to do this. \cite{killamsetty2023milo}
 
-In \cite{chanda2026bandit}, we propose an alternative solution to this. We cast the problem of curriculum learning design as an online bandit setup. Each submodular function here act as arms from the class of \emph{representative/diversity} where the coupled validation guidance acts as a reward signal. 
+In \cite{chanda2026bandit}, we propose an alternative solution to this. We cast the problem of curriculum learning design as an online bandit setup. Each submodular function here act as arms from the class of \emph{representative/diversity} where the coupled validation guidance acts as a reward signal.
 
-
-A second goal is to design efficient surrogates for expensive data mixture baselines \cite{xie2023doremi,liu2025regmix}. 
-
+A second goal is to design efficient surrogates for expensive data mixture baselines \cite{xie2023doremi,liu2025regmix}.
 
 We propose \textbf{\texttt{PartitionSEL}}
 \cite{agrawal2026minibatch}
 
 Empirically, the main highlight of \texttt{PartitionSEL} is that it showcases better validation log-pplx than full batch selection methods along with better alternative log-pplx curves than traditional expensive data mixture methods like DoReMI and RegMix \cite{xie2023doremi, liu2025regmix}
 
+Continual Learning forgetting: In \cite{nayak2026sculpting} my collaborators and I
 
-
-Continual Learning forgetting: In \cite{nayak2026sculpting} my collaborators and I 
-
-
-Our goal is to learn their tastes by training a model for every user. On the one hand, the personalized model must be rich so as to capture a wide variety of user tastes, but on the other hand, it must have small memory overhead per user and good generalization properties despite low data per user. (b) \textbf{Online:} We do not have any data apriori. Our goal is to collect data from each user, learn their tastes, and recommend good likeable items quickly. This leads to the \textbf{folklore exploration/exploitation dilemma}.\\   
+Our goal is to learn their tastes by training a model for every user. On the one hand, the personalized model must be rich so as to capture a wide variety of user tastes, but on the other hand, it must have small memory overhead per user and good generalization properties despite low data per user. (b) \textbf{Online:} We do not have any data apriori. Our goal is to collect data from each user, learn their tastes, and recommend good likeable items quickly. This leads to the \textbf{folklore exploration/exploitation dilemma}.\\
 
 \noindent \textbf{Designing subsets for Curriculum Learning:} In our work \cite{chanda2026bandit}, I propose a bandit guided reward signal.
 
-\noindent \textbf{Fairness in Domain Representations:} 
-Language models are typically trained on data corpus consisting of multiple domains. Often, such domain representations in the training corpus are imbalanced. For instance \emph{MetaMathQA} \cite{yu2024metamath} is a dataset that consists of multiple domains, particularly math domains. It becomes crucial therefore in such scenarios that during subsets selected in the minibatch such underrepresented domains may get less representations in the final selected subset.  
-
-
+\noindent \textbf{Fairness in Domain Representations:}
+Language models are typically trained on data corpus consisting of multiple domains. Often, such domain representations in the training corpus are imbalanced. For instance \emph{MetaMathQA} \cite{yu2024metamath} is a dataset that consists of multiple domains, particularly math domains. It becomes crucial therefore in such scenarios that during subsets selected in the minibatch such underrepresented domains may get less representations in the final selected subset.
 
 \noindent \textbf{Role of Spectral Optimizers in Gradient Matching based Coreset Selection} Adam \cite{kingma2014adam}
 
 \noindent \textbf{Vision for future research:}
 
-$\bullet{}$ \textbf{Unlearning, privacy and robustness constraints:} 
+$\bullet{}$ \textbf{Unlearning, privacy and robustness constraints:}
 
 In, Gautam Kamath's ICML 2026 keynote \cite{suriyakumar2026unlearning}, he showcases how unlearning can be cast as a subset selection problem.
 
-
 \section{Fairness}
 
-
-Hence, the question is 
+Hence, the question is
 \noindent \textit{"How can we elegantly model and efficiently train from limited heterogeneous/complex user data with few learnable parameters?"} \\
 
- 
- 
- 
- In \cite{pal2022learning}, we again consider high-dimensional mixtures of many popular distributions with sparse component parameters. However, we do not make any other assumptions. Here, we show rigorous theoretical guarantees for support recovery, i.e., the task of identifying the non-zero indices of each of the latent sparse component parameter vectors. 
- Algorithmically, we use 
- techniques from \textbf{low rank tensor decomposition} and 
- the empirically popular \textbf{method of moments} framework via novel polynomial based methods. Our results also extend to mixtures of sparse linear regressors \cite{KrishnamurthyM020,mazumdar2020recovery}, and sparse linear classifiers \cite{gandikota2020learning,pal2021support} in a related design setting, where the co-variates can be designed and queried for responses. We demonstrate non-trivial design schemes and
- provide sufficient guarantees on the number of designed co-variates for parameter estimation in mixture of linear regressions and linear classifiers. Finally, in \cite{ghosh2022learning}, we provided a practical \textbf{Alternating Minimization} algorithm for fitting a mixture of linear regressors, with rigorous convergence guarantees, in the \textbf{non-realizable setting} (with no assumptions on data generation process).
- 
- All contributions referred to above appeared in NeurIPS, ICML, AISTATS and ICLR.\\
 
+
+
+In \cite{pal2022learning}, we again consider high-dimensional mixtures of many popular distributions with sparse component parameters. However, we do not make any other assumptions. Here, we show rigorous theoretical guarantees for support recovery, i.e., the task of identifying the non-zero indices of each of the latent sparse component parameter vectors.
+Algorithmically, we use
+techniques from \textbf{low rank tensor decomposition} and
+the empirically popular \textbf{method of moments} framework via novel polynomial based methods. Our results also extend to mixtures of sparse linear regressors \cite{KrishnamurthyM020,mazumdar2020recovery}, and sparse linear classifiers \cite{gandikota2020learning,pal2021support} in a related design setting, where the co-variates can be designed and queried for responses. We demonstrate non-trivial design schemes and
+provide sufficient guarantees on the number of designed co-variates for parameter estimation in mixture of linear regressions and linear classifiers. Finally, in \cite{ghosh2022learning}, we provided a practical \textbf{Alternating Minimization} algorithm for fitting a mixture of linear regressors, with rigorous convergence guarantees, in the \textbf{non-realizable setting} (with no assumptions on data generation process).
+
+All contributions referred to above appeared in NeurIPS, ICML, AISTATS and ICLR.\\
 
 \noindent \textbf{Vision for Future Research:}
 
-
 %\begin{enumerate}[noitemsep,nolistsep]
-    $\bullet{}$ \textbf{Practical  algorithms for multi-task learning with labelled and unlabelled data:}
-    
-    $\bullet{}$ \textbf{Interactive learning with mixture models:} 
+$\bullet{}$ \textbf{Practical  algorithms for multi-task learning with labelled and unlabelled data:}
 
+$\bullet{}$ \textbf{Interactive learning with mixture models:}
 
 \section{Community Detection for Personalization}
 
@@ -186,17 +166,14 @@ Finally, we also study a related problem, where the user similarity graph is not
 
 All contributions referred to above appeared in JMLR, NeurIPS, AAAI and RANDOM. \\
 
-
 \noindent \textbf{Vision for future research:}
 
 %\begin{itemize}[noitemsep,nolistsep]
-    $\bullet{}$ \textbf{Joint community detection and multi-task learning:} Consider multi-task learning where as side information, we are provided a similarity graph/meta-data over tasks. We can exploit the graph for reconstructing communities among tasks, where each community corresponds to a similar set of tasks that share parameters. In that case, we can aggregate the data corresponding to each community of tasks and learn the underlying parameters with significantly improved rates. In several recommendation systems, apart from the user item interaction data, we also have social graphs over users or knowledge graphs over items. Exploiting the graph information appropriately to improve recommendation is an exciting direction. 
-
+$\bullet{}$ \textbf{Joint community detection and multi-task learning:} Consider multi-task learning where as side information, we are provided a similarity graph/meta-data over tasks. We can exploit the graph for reconstructing communities among tasks, where each community corresponds to a similar set of tasks that share parameters. In that case, we can aggregate the data corresponding to each community of tasks and learn the underlying parameters with significantly improved rates. In several recommendation systems, apart from the user item interaction data, we also have social graphs over users or knowledge graphs over items. Exploiting the graph information appropriately to improve recommendation is an exciting direction.
 
 \section{Use of AI for this Research Statement:}
 
 I personally felt that spending more than two days on polishing my research statement may not be a good use of my time, given AI would have been able to write this well for me in a jiffy and also given the fact that at this point in time it has already solved millennium prize problems. But in hindsight, writing this manually was a cathartic experience, given it opened up several gaps in how I desired to communicate the problems I have been working on. These gallactic AI companies may solve millenium prize problems, but deep down I know the nuances of underlying research problems which i dont feel can get captured quite well in the latent representations if i pass them as prompts. Pardon my not so fluent writeup.
-
 
 \bibliographystyle{alpha}
 \bibliography{references}
