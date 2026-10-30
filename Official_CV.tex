@@ -1,0 +1,434 @@
+\documentclass[9pt]{article}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[usenames]{color}
+\usepackage{hyperref}
+\usepackage{multicol}
+\setlength{\columnseprule}{1pt}
+% \leftmargin=0.25in
+% \oddsidemargin=0.25in
+% \textwidth=6.0in
+% \topmargin=-0.25in
+% \textheight=9.25in
+
+\raggedright
+
+\pagenumbering{none}
+
+\def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
+% DEFINITIONS FOR RESUME
+
+\newenvironment{changemargin}[2]{%
+  \begin{list}{}{%
+    \setlength{\topsep}{0pt}%
+    \setlength{\leftmargin}{0pt}%
+    \setlength{\rightmargin}{#2}%
+    \setlength{\listparindent}{\parindent}%
+    \setlength{\itemindent}{\parindent}%
+    \setlength{\parsep}{\parskip}%
+  }%
+  \item[]}{\end{list}
+}
+
+\newcommand{\lineover}{
+	\begin{changemargin}{-0.05in}{-0.05in}
+		\vspace*{-8pt}
+		\hrulefill \\
+		\vspace*{-2pt}
+	\end{changemargin}
+}
+
+\newcommand{\header}[1]{
+	\begin{changemargin}{-0.5in}{-0.5in}
+		\scshape{#1}\\
+  	\lineover
+	\end{changemargin}
+}
+
+\newcommand{\contact}[4]{
+	\begin{changemargin}{-0.5in}{-0.5in}
+		\begin{center}
+			{\Large \scshape {#1}}\\ \smallskip
+			{#2}\\ \smallskip 
+			{#3}\\ \smallskip
+			{#4}\smallskip
+		\end{center}
+	\end{changemargin}
+}
+
+\newenvironment{body} {
+	\vspace*{-16pt}
+	\begin{changemargin}{-0.25in}{-0.5in}
+  }	
+	{\end{changemargin}
+}	
+
+\newcommand{\school}[4]{
+	\textbf{#1} \hfill \emph{#2\\}
+	#3\\ 
+	#4\\
+}
+
+% END RESUME DEFINITIONS
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Name
+\contact{Soumyabrata Pal}{\textbf{Email:} soumyabratapal13@gmail.com}{\textbf{Mobile:} +91-7604039429 \hspace{6mm} \textbf{Website:} https://soumyabratap.github.io}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Objective
+\header{Research Interests}
+
+\begin{body}
+\vspace{14pt}
+My primary research interest is high dimensional statistics with a focus on \textit{non-convex optimization} and \textit{online learning}. In general,
+my research has revolved around addressing scalability and efficiency issues stemming from deployment of large scale ML applications for millions of users/enterprises where data per user is limited.
+
+\end{body}
+
+\smallskip
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Education
+\header{Education}
+
+\begin{body}
+	\vspace{14pt}
+	\begin{itemize}
+	\item \textbf{University of Massachusetts Amherst} \hfill \emph{ 2016-2021}\\ 
+	\emph{Ph.D. in Computer Science}\\
+	\begin{itemize}
+	\item Dissertation: \href{https://web.cs.umass.edu/publication/docs/2022/UM-CS-PhD-2022-001.pdf}{\color{blue}{\textit{``Mixture Models in Machine Learning"}}}
+	\item \textit{Advisor:} Arya Mazumdar; \textit{Thesis Committee:} Barna Saha, Akshay Krishnamurthy, Patrick Flaherty
+	\end{itemize}
+  \item \textbf{University of Massachusetts Amherst} \hfill \emph{ 2016-2019}\\ 
+	\emph{MS in Computer Science} \hfill GPA: 3.978/4.0\\	
+	
+\item \textbf{Indian Institute of Technology Kharagpur } \hfill \emph{2012-2016} \\
+	\emph{B.Tech in Electronics and Electrical Communication Engineering} \hfill CGPA - 9.16/10.0 \\
+\end{itemize}
+\end{body}
+
+\smallskip
+
+
+\header{Professional Appointments}
+
+
+
+\begin{body}
+	\vspace{14pt}
+
+\begin{itemize} \itemsep -0pt
+       
+\item \textbf{Google Research  (Bangalore)}\hfill{} \textit{Advisor:} Prateek Jain\\ \textit{Visiting Faculty Researcher in Machine Learning and Optimization} \hfill{} \emph{Jan 2022-Present}\\  
+\begin{itemize}
+      \item Designed and analyzed Interactive Machine learning models for fast personalized recommendations via Online Collaborative Filtering algorithms.
+      Our approach uses low rank matrix completion techniques with provable theoretical guarantees. \textit{In collaboration with non-profit ARMMAN and the AI for Social Good team at Google, our designed algorithm is scheduled to be implemented for predicting available call-slots to provide advice for $2.2$ million underprivileged expectant mothers. In simulations, our algorithm is providing a 20\% reduction in cost over non-collaborative algorithms in the above application.}
+      \item Designed Robust Meta Learning  Algorithms with privacy guarantees for multi-task learning/meta-learning in a novel Low Rank and Sparse framework that carefully model parameter sharing across users. Used fast Alternating Minimization techniques with provable guarantees. Implemented designed algorithm for fine-tuning pre-trained Deep Neural Network thus personalizing Google's Email Ranking program - \textit{led to $>2$\% increase over baseline MRR obtained without any personalization (across $>100k$ enterprises).}
+\end{itemize}      
+        
+        \item \textbf{Amazon AI and Search  (Berkeley)}\hfill{} \textit{Mentor:} Kai Zhong\\ \textit{New Techniques for Extreme Multi-Class Classification} \hfill{} \emph{  (Spring Internship 2020)}\\
+\begin{itemize}
+\item Goal is to predict prefix-free user queries in a session given past queries. Proposed a novel approach for autoregressive phrase generation with large vocabulary size at each step. 
+Designed a novel two-stage auto-regressive encoder-decoder model that combined pre-existing classical ML (PECOS: prediction for enormous and correlated output spaces) and Sequence to sequence deep learning models for Extreme Multi-label Classification (millions of labels). \textit{The new model achieved 10\% better Weighted BLEU score than state of the art pre-trained models and also obtained a comparable MRR.   }
+\end{itemize}        
+        
+        
+%          \begin{itemize} 
+%             \item Worked on PECOS and Sequence to sequence deep learning models in order to predict the queries of a user given the previous query in a prefix-free setting.  I completed a detailed evaluation of both these models on random traffic data and came up with conclusive evidence to suggest that Seq2seq performed better than PECOS.
+%             \item I designed a new two-stage model that combined PECOS and Seq2seq by clustering the ELMO embedding of each word in vocabulary and training the seq2seq model on the clusters as tokens. In the second stage, I trained a linear ranker to rank the items in each cluster.
+%             \item The new model had the best Weighted BLEU score beating the state of the art pre-trained models and also obtained a comparable MRR score. Further, this model performed better than all other naive baselines.
+%       \end{itemize} 
+	  \smallskip
+          \item \textbf{Ernst \& Young (Palo Alto)} \hfill{} \textit{Mentor:} Freddy C. Chua\\ \textit{Dynamic Program for Fast Inference in text documents}   \hfill{} \emph{  (Summer Internship 2019)}\\
+\begin{itemize}
+  \item Designed end to end trainable deep learning model using LSTM that learns the similarity between two bounding boxes of words present in a document.
+  \item Designed a hyperparameter free dynamic programming (DP) algorithm (using the LSTM module) with provable guarantees for inference of paragraphs/tables in financial documents. \textit{I also designed fast and highly accurate heuristic version of DP algorithm that inferred the location paragraphs in $\approx$20 secs.}
+\end{itemize}          
+          
+%          \begin{itemize} 
+%              \item Worked on document segmentation in order to recover Unit of Analysis (UoA) from a single page invoice. I developed an end to end trainable deep learning model using LSTM that learns the similarity between two bounding boxes of words present in a document. 
+%              \item From the resulting fully connected weighted graph, I bypassed the necessity for the graph clustering problem (and therefore any hyperparameters) by developing a novel dynamic programming algorithm for inference. The DP algorithm was completely parameter free and therefore domain independent.
+%              \item I also designed a fast version of this algorithm that is able to achieve highly accurate results on documents and required an approximate time of only 20 seconds. 
+%          \end{itemize} 
+	  \smallskip
+          \item \textbf{Samsung Research (Bangalore)} \hfill{} \textit{Mentor:} Ashes Dhanna Ganguly \\ \textit{A pipeline for viewing 3D medical DICOM images} \hfill{} \emph{  (Summer Internship 2015)}\\
+          \begin{itemize} 
+              \item Worked on open source codes of XTK viewer and Rest-3D server, integrated them and
+modified them to include a large number of features. Also, worked extensively on Javascript and Node.js to build both server side and client side systems that
+interact with each other by sending and responding to requests.
+          \end{itemize} 
+	  \smallskip
+\end{itemize}          
+\end{body}
+
+\smallskip
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Experience
+\header{Journal Publications (Author names are listed alphabetically)}
+\begin{enumerate}
+
+\item Sainyam Galhotra, Arya Mazumdar, Soumyabrata Pal and Barna Saha. \href{https://arxiv.org/abs/2206.11303}{ \color{blue}{\textit{``Community Recovery in the Geometric Block Model
+"}}}. Journal of Machine Learning Research (JMLR), 2023. Preliminary version appeared in AAAI 2018 and RANDOM 2019 
+
+\item Akshay Krishnamurthy, Arya Mazumdar, Andrew McGregor and Soumyabrata Pal. \href{https://arxiv.org/pdf/1904.09618.pdf}{ \color{blue}{\textit{``Trace Reconstruction: Generalized and Parameterized."}}} IEEE Transactions on Information Theory, 2021. Preliminary version appeared in $27^{\mathsf{th}}$ Annual European Symposium on Algorithms (ESA 2019).
+
+\item Arya Mazumdar and Soumyabrata Pal. \href{https://arxiv.org/abs/1904.00507}{\color{blue}{\textit{``Semisupervised Clustering by Queries and Locally Encodable Source Coding."}}} IEEE Transactions on Information Theory, 2021. Preliminary version appeared in Advances in Neural Information Processing Systems (NeurIPS), 2017.
+\end{enumerate}
+
+\header{Conference Publications (Author names are listed alphabetically in most papers. In few of them, marked by \#, authors names are lister in order of contribution.)}
+\begin{enumerate}
+
+\item (\#) Ayush Sawarni, Soumyabrata Pal and Siddharth Barman. \href{}{\color{blue}{\textit{``Nash Regret Guarantees for Linear Bandits"}}}.
+Advances in Neural Information Processing Systems (NeurIPS), 2023. 
+
+\item (\#) Soumyabrata Pal, Arun Sai Suggala, Karthikeyan Shanmugam and Prateek Jain.
+\href{}{\color{blue}{\textit{``Blocked Collaborative Bandits: Online Collaborative Filtering with Per-Item Budget Constraints"}}}.
+Advances in Neural Information Processing Systems (NeurIPS), 2023.
+
+
+\item (\#)  Soumyabrata Pal, Arun Sai Suggala, Karthikeyan Shanmugam and Prateek Jain.
+\href{https://arxiv.org/abs/2301.07040}{\color{blue}{\textit{``Optimal Algorithms for Latent Bandits with Cluster Structure "}}}.
+International Conference on Artificial Intelligence and Statistics (AISTATS), 2023.
+
+\item  Prateek Jain and Soumyabrata Pal.
+\href{https://arxiv.org/abs/2209.03997}{\color{blue}{\textit{``Online Low Rank Matrix Completion"}}}.
+International Conference on Learning Representations (ICLR), 2023.
+
+\item  Abhishek Ghosh, Arya Mazumdar, Rajat Sen and Soumyabrata Pal.
+\href{https://arxiv.org/abs/2205.13166}{\color{blue}{\textit{``On Learning Mixture of Linear Regressions in the Non-Realizable Setting"}}}. International Conference on Machine Learning (ICML), 2022.
+
+\item Arya Mazumdar and Soumyabrata Pal. \href{https://arxiv.org/abs/2202.11940}{\color{blue}{\textit{``On Learning Mixture Models with Sparse Parameters "}}}. International Conference on Artificial Intelligence and Statistics (AISTATS), 2022.
+
+
+\item Wasim Huleihel, Arya Mazumdar, and Soumyabrata Pal. \href{https://arxiv.org/abs/2106.02212}{\color{blue}{\textit{``Fuzzy Clustering with Similarity Queries "}}}. Advances in Neural Information Processing Systems (NeurIPS 2021).
+
+\item Venkata Gandikota, Arya Mazumdar and Soumyabrata Pal. \href{https://arxiv.org/abs/2106.05951}{\color{blue}{\textit{``Support Recovery of Sparse Signals from a Mixture of Linear Measurements "}}}. Advances in Neural Information Processing Systems (NeurIPS 2021). 
+
+\item Sami Davies, Arya Mazumdar, Soumyabrata Pal and Cyrus Rashtchian. \href{https://arxiv.org/abs/2109.01064}{\color{blue}{\textit{``Lower Bounds on the Total Variation Distance Between Mixtures of Two Gaussians "}}}. Algorithmic Learning Theory (ALT 2022).
+
+\item Arya Mazumdar and Soumyabrata Pal. \href{https://arxiv.org/pdf/2107.09091}{\color{blue}{\textit{``Support Recovery in Universal One-bit Compressed Sensing"}}}. The 13th Innovations in Theoretical Computer Science (ITCS 2022).
+
+\item Wasim Huleihel, Soumyabrata Pal and Ofer Shayevitz.  \href{https://arxiv.org/abs/2101.12506}{\color{blue}{\textit{``Learning User Preferences in Non-Stationary Environments" }}} International Conference on Artificial Intelligence and Statistics (AISTATS 2021), pp. 1431-1440.
+
+\item Venkata Gandikota, Arya Mazumdar and Soumyabrata Pal. \href{https://arxiv.org/abs/2010.12087}{\color{blue}{\textit{``Sample Complexity of Learning Mixture of Sparse Linear Regressions ."}}}  Advances in Neural Information Processing Systems (NeurIPS 2020), pp. 14688--14698.
+
+\item Arya Mazumdar and Soumyabrata Pal. \href{https://arxiv.org/abs/2006.16406}{\color{blue}{\textit{``Recovery of Sparse Signals from a Mixture of Linear Samples."}}} Proceedings of the $37^{\mathsf{th}}$ International Conference on Machine Learning (ICML 2020), pp. 10984-10993. 
+\item Raj Kumar Maity, Arya Mazumdar and Soumyabrata Pal. \href{https://arxiv.org/abs/1806.11542}{\color{blue}{\textit{``High Dimensional Discrete Integration by Hashing and Optimization."}}} Proceedings of the $36^{\mathsf{th}}$ Conference on Uncertainty in Artificial Intelligence (UAI 2020), pp. 177-186.
+ 
+\item Akshay Krishnamurthy, Arya Mazumdar, Andrew McGregor and Soumyabrata Pal. \href{https://arxiv.org/abs/2001.06776}{\color{blue}{\textit{``Algebraic and Analytic Approaches for Parameter Learning in Mixture Models."}}} Algorithmic Learning Theory (ALT 2020), pp. 468-489. 
+   
+ \item Wasim Huleihel, Arya Mazumdar, Muriel Medard and Soumyabrata Pal. \href{https://arxiv.org/abs/1910.12490}{\color{blue}{\textit{``Same-Cluster Querying for Overlapping Clusters."}}} Advances in Neural Information Processing Systems (NeurIPS 2019), pp. 10485-10495. 
+\item Akshay Krishnamurthy, Arya Mazumdar, Andrew McGregor and Soumyabrata Pal. \href{https://arxiv.org/abs/1910.14106}{\color{blue}{\textit{``Sample Complexity of Learning Mixture of Sparse Linear Regressions ."}}}   Advances in Neural Information Processing Systems (NeurIPS 2019), pp. 10531-10540. 
+
+\item Sainyam Galhotra, Arya Mazumdar, Soumyabrata Pal and Barna Saha. \href{https://arxiv.org/abs/1804.05013}{ \color{blue}{\textit{``Connectivity in Random Annulus Graphs and the Geometric Block Model."}}} Approximation, Randomization, and Combinatorial Optimization. Algorithms and Techniques (APPROX/RANDOM 2019), pp. 53:1--53:23. 
+
+\item Akshay Krishnamurthy, Arya Mazumdar, Andrew McGregor and Soumyabrata Pal. \href{https://arxiv.org/pdf/1904.09618.pdf}{ \color{blue}{\textit{``Trace Reconstruction: Generalized and Parameterized."}}} $27^{\mathsf{th}}$ Annual European Symposium on Algorithms (ESA 2019), pp. 68:1--68:25. Extended version  to appear in \textit{IEEE Transactions on Information Theory, 2021}.
+
+\item Arya Mazumdar and Soumyabrata Pal.  \href{https://arxiv.org/abs/1904.00507}{\color{blue}{\textit{``Semisupervised Clustering, AND-Queries and Locally Encodable Source Coding."}}} Advances in Neural Information Processing Systems (NeurIPS 2017), pp. 6489-6499. \textbf{\color{red}{Selected for Spotlight}}. Extended version appeared in \textit{IEEE Transactions on Information Theory, 2021}.
+
+\item Sainyam Galhotra, Arya Mazumdar, Soumyabrata Pal and Barna Saha. \href{https://arxiv.org/abs/1709.05510}{\color{blue}{\textit{``The Geometric Block Model."}}} Proceedings of the $32^{\mathsf{nd}}$ {AAAI} Conference on Artificial Intelligence (AAAI-18), pp. 2215-2222. Shorter version in NeurIPS Workshop (LDFGG), 2017. 
+
+\end{enumerate}
+
+\smallskip
+\header{Manuscripts under submission (Author names are listed alphabetically in most papers. In few of them, marked by \#, authors names are lister in order of contribution.)}
+\begin{enumerate}
+
+
+
+\item (\#) Soumyabrata Pal, Prateek Varshney, Prateek Jain, Abhradeep Guha Thakurta, Gagan Madan, Gaurav Aggarwal, Pradeep Shenoy, and Gaurav Srivastava. \href{https://arxiv.org/abs/2210.03505}{\color{blue}{\textit{``Private and Efficient Meta-Learning with Low Rank and Sparse Decomposition"}}}. In Submission.
+
+
+\item (\#) Sushant Vijayan, Soumyabrata Pal Karthikeyan Shanmugam and Arun Sai Suggala. \href{}{\color{blue}{\textit{``Improved Algorithms for Stochastic Linear Bandits with Prior Observations via D-optimal Exploration"}}}.
+In Submission.
+
+
+
+\item Dheeraj Baby and Soumyabrata Pal. \href{}{\color{blue}{\textit{``Online Matrix Completion: A Collaborative Approach with Hott Items"}}}.
+In Submission. 
+
+
+\item Namiko Matsumoto, Arya Mazumdar and Soumyabrata Pal.  \href{https://arxiv.org/abs/2210.16657}{ \color{blue}{\textit{``Improved Support Recovery in Universal One-bit Compressed Sensing
+"}}}. Submitted to IEEE Transactions on Information Theory. Preliminary version appeared in Innovations in Theoretical Computer Science (ITCS), 2022.
+
+
+
+\item Wasim Huleihel, Arya Mazumdar, and Soumyabrata Pal. \href{https://arxiv.org/abs/2110.00744}{\color{blue}{\textit{``Random Subgraph Detection Using Queries"}}}. Submitted to Journal of Machine Learning Research (JMLR). 
+
+\item Arya Mazumdar and Soumyabrata Pal. \href{https://arxiv.org/abs/2202.11940}{\color{blue}{\textit{``Support Recovery in Mixture Models with Sparse Parameters"}}}. Submitted to Journal of Machine Learning Research (JMLR). Preliminary version appeared in International Conference on Artificial Intelligence and Statistics (AISTATS), 2022.
+
+
+
+
+\end{enumerate}
+
+
+% \smallskip
+
+
+% \newpage{} % uncomment this line if you want to force a new page
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Publications
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Skills
+%\header{Research Projects}
+%
+%\begin{body}
+%    
+%	\vspace{14pt}
+%        \begin{itemize} \itemsep -0pt
+%        \item \textbf{Semisupervised Clustering, AND Queries and Locally Encodable Source Coding }
+%        \\ Prof. Arya Mazumdar (Umass Amherst) \hfill{}   \emph {(Aug 2016-Apr 2017)}\\
+%          \begin{itemize} 
+%              \item Showed improved bounds for query complexity in clustering using crowdsourcing in different settings.
+%              \item Used novel techniques from Information theory and Coding theory. Proposed algorithms using new query functions when a certain error in the accuracy for clustering can be tolerated.
+%              \item Accepted for NIPS in Spotlight (112 out of over 3000 submitted papers).
+%          \end{itemize} 
+%          \smallskip
+%          \item \textbf{The Geometric Block Model}
+%           \\ Prof. Arya Mazumdar, Prof. Barna Saha (Umass Amherst) \hfill{}   \emph {(Jan 2017-Present)}\\
+%              \begin{itemize} 
+%              \item Propose a random model which takes into account the geometric properties of a dataset.
+%              \item It is a natural extension of the famous Stochastic Block Model. We also proposed an efficient and optimal algorithm to recover clusters from such a block model. Experiments conducted prove that our algorithm works on a large number of real datasets.
+%              \item Accepted at AAAI 2018  
+%          \end{itemize} 
+%          \smallskip
+%          \item \textbf{Online Learning in Non-stationary environment}
+%           \\ Prof. Akshay Krishnamurthy (Umass Amherst) \hfill{}   \emph {(Aug 2016-Present)}\\
+%              \begin{itemize} 
+%              \item  Most algorithms for online learning assume a stationary environment. However this assumption is not realistic since the trends in an industry change from time to time.
+%              \item  We are working on removing this assumption on stationarity. We have made substantial progress and are planning to submit our work to ICML 2018.
+%          \end{itemize} 
+%          \smallskip
+%          \item \textbf{Use of hash families for estimating problems in  \# P-complete}
+%           \\ Prof. Arya Mazumdar (Umass Amherst) \hfill{}   \emph {(May 2017-Present)}\\
+%              \begin{itemize} 
+%              \item  Hashing provides us with a major tool to estimate counting problems like integration which is in the complexity class \# P.
+%              \item  We have made many improvements to the technique using some novel ideas and are planning to submit our work to ICML 2018.
+%          \end{itemize} 
+%          \smallskip
+%          \item \textbf{Extension of the known properties of Fibonacci and Lucas sequence to General recurrence
+%relations }
+%          \\ Dr. Shankar Venkatesan (Samsung R\&D Bangalore, India) \hfill{}   \emph{2015}\\
+%          \begin{itemize} 
+%              \item Worked on extending a number of theorems by Wall and others on Fibonacci series to General Recurrences and gave 2 different proofs of their extension to General recurrences.
+%              \item Proved that a number of theorems on properties of Fibonacci numbers modulo a number $m$ also holds for General Recurrences where the coefficients are arbitrary integers.
+%          \end{itemize} 
+%          \smallskip
+%          \item \textbf{Dyck Paths of Bounded height (IIT Kharagpur, India)}\\ \hfill{}   \emph{2013} \\
+%          \begin{itemize} 
+%              \item A theoretical Project essential in Computer Graphics. Solved the problem of Dyck Paths of Bounded height and found a closed form formula for it.
+%              \item Was selected for the UCO Bank Medha Samman Award in JBNSTS 2013 for this project. 
+%          \end{itemize} 
+%       \end{itemize}
+%          
+%\end{body}
+
+%\medskip
+
+\header{Teaching Experience}
+
+\begin{itemize}
+\item \textit{Teaching Assistant} - Combinatorics and Graph Theory, Fall 2020, Umass Amherst.
+\item \textit{Guest Lecturer (Unique games conjecture)} - New Directions in Approximation Algorithms, Fall 2019, UC Berkeley. 
+\item \textit{Guest Lecturer (\href{https://drive.google.com/file/d/16HoOiB9J04bWamqGTN5cigeRlUoCoW27/view}{\color{blue}\textit{Stochastic Block Model)}}} - Algorithms for Data Science, Fall 2020, UC Berkeley
+\item \textit{Guest Lecturer (\href{https://drive.google.com/file/d/1AFGdjGNsTQaaV9tcIV-N-O0nZkIjieqE/view}{\color{blue}\textit{Geometric Block Model)}}} - Algorithms for Data Science, Fall 2020, UC Berkeley
+\end{itemize}
+
+
+\header{Students Mentored}
+\begin{itemize}
+\item Prateek Varshney (Now Master's Student at Stanford University)
+\item Sushant Vijayan (Ph.D. Student at TIFR Mumbai)
+\end{itemize}
+
+
+\header{Honours and Awards}
+
+          
+\begin{body}
+	\vspace{14pt}
+        \begin{itemize} \itemsep -0pt
+          \item Passed Portfolio and entered candidacy for doctoral degree with distinction.          
+          \item Received NeurIPS travel award 2017.
+          \item Awarded Indian Academy of Sciences Summer Fellowship, 2014. 
+          \item Recipient of Jagadish Bose National Science Talent Search, (JBNSTS) scholarship since 2012.
+          \item Achieved Gold Medal in Mathematics Olympiad in 2013, Bronze Medal in 2014, Bronze medal in 2015 and Gold Medal in 2016 at IIT Kharagpur. 
+          \item Cleared IIT-Joint Entrance Examination 2012 with ALL INDIA RANK of 381 out of 5,00000+ examinees (top 1\%) and All India Engineering Entrance Examination(AIEEE) 2012 with ALL INDIA RANK of 1691 out of 6,00000+ examinees.
+          \item Recipient of Certificate of Merit from NSEP (National Standard Examination in
+Physics) for ranking among national top 1\%.
+          \item Recipient of Kishore Vaigyanik Protshahan Yojana (KVPY) Scholarship (2010-2012) for clearing the KVPY exam 2010 with All India Rank 41. 
+          \item Recipient of the Certificate of Merit in Indian National Mathematics Olympiad (INMO) 2010 for
+securing an All India Rank below 75. 
+          \item Cleared the Regional Mathematics Olympiad, 2009 and was directly selected for INMO 2011.  
+        %   \item Awarded Educational Scholarship by SAIL and DSP(Durgapur Steel Plant) for clearing IIT-JEE.  
+        
+        
+        \end{itemize}
+	%\vspace*{-4pt}
+\end{body}
+\smallskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Leadership
+
+% \header{Relevant Coursework}
+
+          
+% \begin{body}
+% 	\vspace{14pt}
+%         \begin{itemize} \itemsep -0pt
+%           \item \textbf{Graduate Course:} Advanced Machine Learning, Machine Learning, Information Theory, Coding Theory, Algorithms, Interactive Machine Learning, Probabilistic Graphical Models, Machine Learning Theory.
+%         \end{itemize}
+% 	%\vspace*{-4pt}
+% \end{body}
+
+% \smallskip
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Awards and Honors
+\newpage{}
+\header{Technical Skills}
+
+\begin{body}
+	\vspace{14pt}
+        \begin{itemize} \itemsep -0pt
+        
+\item \textbf{Languages: }  Python(Most Experienced), C, C++, C\#, Java, MATLAB, Octave
+\item \textbf{Tools/Frameworks: } PyTorch, Keras, TensorFlow, Scikit-learn, NumPy, Pandas, NLTK, AWS \\ \emph{ETL Tools:} SAS, SSIS, \emph{Big Data:} Hadoop, Hive 
+ \item  \textbf{Data Vizualization: }  Tableau, Microsoft  Excel, \emph{Web Visualization}: Flask	
+	    \end{itemize}
+        \medskip
+\end{body}
+
+
+% \header{References}
+
+          
+% \begin{body}
+% 	\vspace{14pt}
+%         \begin{itemize} \itemsep -0pt
+%           \item \textbf{Arya Mazumdar (Advisor)} \\ \textit{Email: } arya@cs.umass.edu \\ \textit{Institution: }University of Massachusetts Amherst
+%           \item  \textbf{Barna Saha} \\ \textit{Email: } barnas@berkeley.edu \\ \textit{Institution: }University of California Berkeley
+%           \item \textbf{Akshay Krishnamurthy}  \\ \textit{Email: } Akshay.Krishnamurthy@Microsoft.com  \\ \textit{Institution: } Microsoft Research
+%           \item \textbf{Andrew McGregor} \\ \textit{Email: } mcgregor@cs.umass.edu \\ \textit{Institution: }University of Massachusetts Amherst                               
+%         \end{itemize}
+% 	%\vspace*{-4pt}
+% \end{body}
+
+% \smallskip
+
+ 
+
+\end{document}

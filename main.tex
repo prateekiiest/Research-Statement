@@ -1,0 +1,84 @@
+\documentclass[paper=a4, fontsize=12pt]{article}
+
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+%\usepackage{fourier}
+\usepackage[english]{babel}
+\usepackage{amsmath,amsfonts,amsthm}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{color}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{sectsty} % Allows customizing section commands
+%\graphicspath{ {/home/soumyabrata} }
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
+\usepackage{dsfont}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\ceil}[1]{\lceil #1 \rceil}
+\title{	
+\normalfont \normalsize 
+%\textsc{University of Massachusetts Amherst} \\ [20pt] % Your university, school and/or department name(s)
+\large Research Proposal \\ % The assignment title
+}
+\author{Soumyabrata Pal} % Your name
+\date{\vspace{-5ex}}
+
+\begin{document}
+\maketitle 
+
+My primary research interests are Theoretical Machine Learning, Applied Statistics and more concisely, I am drawn towards statistical reconstruction problems where the goal is to reconstruct a general object from distorted or noisy observations. In the modern era, data with unprecedented size and dimension is being generated at breakneck speed from many different sources such as multimedia, sensor networks, biological systems, and social networks. Much of this data is unstructured, corrupted, or incomplete and it seems impossible to process such complex data without carefully designing rich and expressive models that incorporate prior structural assumptions and capture inherent properties of real-world datasets.
+Moreover, much of this data is often being collected without having a specific goal in advance. Therefore, for any new learning problem, the practitioner is often provided with an overwhelming amount of data that has significant redundant or irrelevant information. As an example, consider a raw image captured by a high quality DSLR camera whose size can easily exceed $50$ MB. However, many image compression schemes such as PNG, JPEG are available that can reduce the image size significantly without making any difference to the human eye. Hence, we can conclude that a large number of pixels in the raw image are irrelevant and moreover the raw images have a hidden structure (compressed version). If the structure is revealed, then learning algorithms on such images can be designed on a significantly lower dimensional space. My research is focused on designing learning algorithms when such a structure is known to exist (even approximately) but is not revealed. Examples of such structural properties 
+include sparsity, low rank, latent clusters, etc. among many others that have been proposed in the literature.
+Such structures in data either occur naturally in many applications (for instance, image and speech signals are sparse) or are often embedded into data via pre-processing (mapping data points into feature vector space gives it a geometric structure).
+Indeed, modern learning algorithms must utilize knowledge of the existence of such structural information so that they have a low data complexity and a low computational complexity. Moreover, theoretical guarantees of such learning algorithms also provides a fine-grained parameterization of the problem and allows deeper insights. 
+
+Again, in the modern era, learning problems often share data and parameters since the data is collected without any specific task in advance. Therefore, it is also important that learning algorithms are not task-specific and can utilize information from other tasks simultaneously in order to increase their efficiency and scalability. As an example in recommendation systems with many users and items, a collaborative filtering approach to find the similarity among users and utilizing such similarity relations to recommend new items works very well in practice. Another example is in the setting of meta-learning where it is assumed that the underlying parameters of many different learning tasks are shared or related and the goal is to design algorithms for jointly learning all tasks. One approach to achieve these goals is to carefully design a parameterized class of machine learning models that satisfy the following properties:
+\begin{enumerate}
+    \item Each member of the model class must have a small number of learnable parameters.
+    \item The class of models must incorporate structural properties that are highly likely to be satisfied by real world datasets for a particular learning task. 
+    \item The class of models must incorporate structural properties that are highly likely to be satisfied by datasets across many different learning tasks.
+\end{enumerate}
+
+I aim to provide a deeper understanding of such structural properties that are satisfied (approximately) in different forms of data (such as vectors, graphs, time-series) in supervised, unsupervised or interactive settings and subsequently, come up with elegant class of models that can inherently capture such structural properties with minimum assumptions on the data-generating mechanism. Subsequently, my goal is to design scalable and easy to implement practical algorithms for learning the model parameters with theoretical guarantees. In addition, I also seek to implement the designed algorithms on large real-world datasets and understand their empirical performance in order to validate the theortical guarantees. Moreover, it is also desirable to design the algorithms such that they satisfy several additional guarantees that are often necessary in practice such as privacy, fairness, robustness, limited memory, etc. Finally, for practical applications, it is extremely important that the designed algorithms and their guarantees are model agnostic meaning that the theoretical guarantees suffer a smooth degradation as the data generating mechanism moves further away from the assumed model. Indeed, the possibilities and scope are endless!
+
+
+In the longer term, my goal is to incorporate such ideas into deep learning models in order to achieve a significant reduction in the model size without suffering any loss in performance on practical large scale applications. One simple idea to implement this in practice is to assume that the data is generated from the final layer of a large pre-trained neural network or to create pipelines for end-to-end training of the same. During my postdoc at Google Research, I also intend to learn from my team members who are experienced practitioners at Google and gain engineering experience to understand and address practical considerations associated with real-world problems so that I am strongly positioned to enhance our understanding of machine learning. 
+
+In my current research at Google, I have already designed explore-then-commit and phased elimination algorithms for online matrix completion a.k.a collaborative filtering with many users and items under low-rank assumptions on the reward matrix. I have obtained results in two natural settings 1) the recommendation engine does not have any restrictions 2) the recommendation engine cannot recommend the same item to a particular user. Indeed the latter setting is very practical since a user is not expected to consume the same item often. In another project on meta-learning, I am currently designing Alternating Minimization algorithms for jointly learning the underlying parameters of several regression tasks under the assumption that the parameters can be decomposed into a low-rank component and sparse component. Both these projects have immense potential in the long run in practice and I aim to develop them  both theoretically and empirically.
+
+
+In my past research in graduate school, I have focused on designing such generative models of different forms of data and exploited many natural structural properties such as sparsity, presence of geometric motifs, latent clusters and underlying similarity relations. In particular, in my thesis titled \textit{"Mixture models in Machine Learning"}, I have made the following broad structural assumption: the dataset can be partitioned into latent clusters where each cluster of datapoints is in some sense \textit{"simple"}. In the unsupervised setting, this means that a well-known distribution such as a Gaussian or a Possion can fit the distribution restricted to each cluster very closely. In the supervised setting, this means that a simple function such as a linear one can model the relationship between the target variable and the independent variables restricted to each cluster of datapoints very closely. Such a structural property of the dataset can be elegantly modeled by assuming that each datapoint is generated from a mixture of simple models for e.g. in the unsupervised setting, the data generating mechanism can be a mixture of Gaussians or Poisson; in the supervised setting, the data generating mechanism can be a mixture of linear regression and classifiers. In all these different mixture models, I have designed algorithms with novel theoretical guarantees on parameter estimation and support recovery when the underlying parameters are known to be sparse. One example of these results include  sufficient sample complexity bounds for parameter estimation \cite{davies2021lower,KrishnamurthyM020} and support recovery \cite{mazumdar2022learning} of a mixture of Gaussians, Poissons, Binomials among many other well-known distributions using the Method of Moments. For most distributions, these results are the first sample complexity guarantees on learning the corresponding mixture. Empirically, I also demonstrated by designing experiments on the well-known MovieLens dataset, that our algorithms designed for Mixtures of Linear Regression and Classifiers \cite{gandikota2020learning, gandikota2021support} are useful for practical recommendation engines whose objective is to recommend items to a set of users without compromising their privacy.
+
+Apart from my thesis, another line of my work with a similar theme for graphs involve the \textit{"Geometric Block Model"}. Community detection in graphs is a ubiquitous problem in machine learning where the objective is to partition the vertices of a graph into disjoint clusters such that each cluster is more densely connected. Many real-world datasets with latent communities can be represented in the form of graphs where the nodes represent the elements and the edges represent noisy interaction data between the elements. Again, a structural property that is satisfied by such graph data is the dependence of edges based on geometric proximity. In other words, nodes which are close together in some sense are more likely to have connections or edges than nodes which are far apart. An elegant way to incorporate such a transitivity property into the data generating mechanism is to make a simple and elegant modeling assumption where each node of the graph has a latent embedding randomly distributed on the surface of a high dimensional sphere and edges are generated deterministically conditioned on the latent embedding and latent communities.
+In this model, I demonstrated simple and efficient triangle counting based algorithms \cite{galhotra2017geometric,GalhotraMPS19} that are theoretically optimal and empirically outperforms other popular techniques for community detection such as Spectral clustering and Correlation clustering. 
+
+I believe that rich statistical models that capture inherent properties of real-world data is an important component of powerful machine learning systems and will enhance data analysis for scientific discovery, advertisement, and personalization. Within ten years, I envision that efficient algorithms designed under such modeling assumptions will be employed by many real-world data-driven applications to gain improved insights on the data. 
+With my research experiences thus far, I have developed a strong, broad, mathematical background and in-depth expertise of modeling data and therefore, as a postdoctoral researcher at Google Research, I aim to make significant contributions to these research areas thereby preparing myself as a strong candidate for full-time research positions at both industrial research labs and academia in India in the future.
+
+Last, but definitely not the least, I enjoy mentoring which I had realized during my undergrad years at IIT Kharagpur where I mentored several junior students for mathematical olympiad and data science competitions. My goal is to obtain a more formal mentoring experience by guiding some of the incredibly talented and ambitious pre-doctoral researchers at Google Research and teach them whatever I know. Since every student is different, a particular mentoring style may not benefit everyone equally. Through regular feedback, I aim to be flexible and adaptive in my mentoring approaches.
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{references} 
+\end{document}
