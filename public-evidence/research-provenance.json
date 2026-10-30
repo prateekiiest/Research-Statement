@@ -6,24 +6,127 @@
     "No claim is made about other devices, accounts, or unmonitored channels."
   ],
   "event_counts": {
-    "file_baseline": 16,
-    "git_head_observed": 1,
-    "saved_file_version": 19
+    "cold_turkey_aggregate_updated": 1,
+    "collector_heartbeat": 6,
+    "collector_started": 1,
+    "file_baseline": 23,
+    "git_head_observed": 3,
+    "saved_file_version": 22
   },
-  "generated_at_utc": "2026-10-30T06:23:38.587390+00:00",
+  "generated_at_utc": "2026-10-30T08:20:07.049021+00:00",
   "observed_period": {
     "first_event_utc": "2026-10-30T05:33:25.225+00:00",
-    "last_event_utc": "2026-10-30T06:22:36.563+00:00"
+    "last_event_utc": "2026-10-30T08:19:54.772+00:00"
   },
   "privacy": "No raw event records, prompts, document contents, local absolute paths, usernames, or browser history are included.",
-  "private_log_sha256": "6815c2bbc4477b1bfd093abc315fcb2ade206e8b6d2e1e2ab1e54a57a4568d39",
-  "repository_commit": "d30fb90ea624ec6290721440c4c82fa8b26e2c49",
+  "private_log_sha256": "800866773b8e0737b6b83a8673daecc762b5a90e533de810be69c99421d54698",
+  "repository_commit": "66740dba6aba99f2d697c620e27abc359b4eea26",
   "schema_version": 1,
   "tracked_artifacts": {
+    ".aux": [
+      {
+        "bytes": 2491,
+        "sha256": "1448571091c36e1f3926e4ff1d2b0abede7a993c3d90baed4b7929323fd9842d"
+      }
+    ],
+    ".bbl": [
+      {
+        "bytes": 5243,
+        "sha256": "edc08c5be4db2d00658f413ffacf2b0aa733c17a8a94c4ba766eacf8ab00a9a8"
+      }
+    ],
     ".bib": [
       {
         "bytes": 6142,
         "sha256": "26909cc9d91a9970f5869263fc94efa113e1d2347846a1bdd60afc0ad1f0708a"
+      }
+    ],
+    ".blg": [
+      {
+        "bytes": 1787,
+        "sha256": "28bb3cd73a7686f707e66a7f1f327f6d69995e24a20aae7024a131b50f57b1b5"
+      }
+    ],
+    ".fdb_latexmk": [
+      {
+        "bytes": 26075,
+        "sha256": "56b6cc1c5a5bd32c8975f58b88c83c10862a66df7ca4d237798791af06275d16"
+      }
+    ],
+    ".fls": [
+      {
+        "bytes": 26265,
+        "sha256": "eb692e25c91860d25efad6fb2a522f5b206ff67d7f9a7581446ac178ae854bdb"
+      }
+    ],
+    ".gz": [
+      {
+        "bytes": 49320,
+        "sha256": "ed722d2d27c6e7063ead479dfb78898f4984db3d60b1b8b6f0a9614c4f700382"
+      }
+    ],
+    ".json": [
+      {
+        "bytes": 805,
+        "sha256": "0b0357b7a7ee734a5a9a45c9a2cecc2f259df2d37df9ba4bb700dd2ac4c7333b"
+      },
+      {
+        "bytes": 2554,
+        "sha256": "de89b02f76be42ff7c4abb657d710a22ba67870ff89c5f1a6e46869bfff900c9"
+      },
+      {
+        "bytes": 1723,
+        "sha256": "a46d4d7bfc98c1ede4194a5f4bed9e51fc634d10e441c509ab6003ca241ae153"
+      }
+    ],
+    ".log": [
+      {
+        "bytes": 37677,
+        "sha256": "fedfc29745f942b817cb32a3ad47e6269d8b5c0aea3ab7dd40808b3d3bcf4ee2"
+      }
+    ],
+    ".md": [
+      {
+        "bytes": 2765,
+        "sha256": "3cf8ffe5faf4bae0db9bf8d2dafc7db8d9ce8df79f12f82395a25793f0e93f19"
+      }
+    ],
+    ".out": [
+      {
+        "bytes": 995,
+        "sha256": "a4bce450748f271aa31021d96e79734aa227a17e2fd572ef17dc34ce4dae2f50"
+      }
+    ],
+    ".pdf": [
+      {
+        "bytes": 200596,
+        "sha256": "f222d898771559e8c5fe2de5a1b102bab3f955ed2de9492a988da7ec49cbe7d1"
+      }
+    ],
+    ".py": [
+      {
+        "bytes": 5594,
+        "sha256": "9c7fd59f1b74a3396b4164cc80c33850912b92d073122cba392f6820f603083a"
+      },
+      {
+        "bytes": 10708,
+        "sha256": "2f93b971f887bf91f02032fdf32566d16ee7e575c4a4d68380ac80c3bc78be71"
+      },
+      {
+        "bytes": 5655,
+        "sha256": "ae748da5a83e2de78ca38d995f7e050ae73313ab592863e0ec973682dbe3660c"
+      },
+      {
+        "bytes": 2115,
+        "sha256": "572a98ec1dde95ce0102aa1bc1b2795e301b59bdb4ecb92e6037943b5f6e7c17"
+      },
+      {
+        "bytes": 11235,
+        "sha256": "59c330ec8cb73318071908c1e9874c33adc7d21e224730ac39ea70b045e9cef3"
+      },
+      {
+        "bytes": 1489,
+        "sha256": "ec47bb71267d4fb757dbefeccb8bdf6081f2b7cad515f513035e21c35b16831d"
       }
     ],
     ".tex": [
@@ -42,6 +145,18 @@
       {
         "bytes": 7503,
         "sha256": "484d87f34fd97d23f7af92bc9ce3766acfdb1d24e5bdf968b6309c478826ae5d"
+      }
+    ],
+    ".yml": [
+      {
+        "bytes": 2284,
+        "sha256": "aae71d6025e5581a3d4d2d4a65028d7828d444b02fd6dd8da27350798742b2fb"
+      }
+    ],
+    "[no-extension]": [
+      {
+        "bytes": 95,
+        "sha256": "04dcfc1dcf9358c6a7a9ffa7b07829e90c40856ad2437be9c4f01c8d18ad8ff0"
       }
     ]
   }
